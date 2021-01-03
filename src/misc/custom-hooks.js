@@ -1,11 +1,12 @@
 import { useEffect, useReducer } from 'react'
+import { add, remove } from '../constant'
 
 function showsReducer(prevState, action) {
   switch (action.type) {
-    case 'ADD':
+    case add:
       return [...prevState, action.showId]
 
-    case 'REMOVE':
+    case remove:
       return prevState.filter(showId => showId !== action.showId)
 
     default:
@@ -16,7 +17,6 @@ function showsReducer(prevState, action) {
 function usePersistedReducer(reducer, initialState, key) {
   const [state, dispatch] = useReducer(reducer, initialState, init => {
     const persisted = localStorage.getItem(key)
-
     return persisted ? JSON.parse(persisted) : init
   })
 

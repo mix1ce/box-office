@@ -4,14 +4,15 @@ import Cast from '../components/show/Cast'
 import Details from '../components/show/Details'
 import Seasons from '../components/show/Seasons'
 import ShowMainData from '../components/show/ShowMainData'
+import { fetchFailed, fetchSuccess } from '../constant'
 import { apiGet } from '../misc/config'
 import { InfoBlock, ShowPageWrapper } from './Show.styled'
 
 const reducer = (prevState, action) => {
   switch (action.type) {
-    case 'FETCH_SUCCESS':
+    case fetchSuccess:
       return { ...prevState, isLoading: false, show: action.show }
-    case 'FETCH_FAILED':
+    case fetchFailed:
       return { ...prevState, isLoading: false, error: action.error }
     default:
       return prevState
