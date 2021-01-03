@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from 'react'
-import { add, remove } from '../constant'
+import { add, remove } from './constant'
 
 function showsReducer(prevState, action) {
   switch (action.type) {

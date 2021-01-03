@@ -4,8 +4,8 @@ import Cast from '../components/show/Cast'
 import Details from '../components/show/Details'
 import Seasons from '../components/show/Seasons'
 import ShowMainData from '../components/show/ShowMainData'
-import { fetchFailed, fetchSuccess } from '../constant'
 import { apiGet } from '../misc/config'
+import { fetchFailed, fetchSuccess } from '../misc/constant'
 import { InfoBlock, ShowPageWrapper } from './Show.styled'
 
 const reducer = (prevState, action) => {
